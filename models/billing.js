@@ -21,7 +21,7 @@ const billingSchema = new mongoose.Schema(
       type: String,
       required: true,
       enum: ["USD", "EUR", "KSH", "GBP", "JPY", "AUD", "CAD"],
-      default: "USD",
+      default: "USD"
     },
   },
   { timestamps: true }
