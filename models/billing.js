@@ -7,20 +7,24 @@ const billingSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
-      unique: true, // Ensures that email is unique 
-      
+      unique: true, // Ensures that email is unique
     },
     phoneNumber: {
       type: String,
       required: true,
-      
     },
     amount: {
       type: Number,
       required: true,
     },
+    currency: {
+      type: String,
+      required: true,
+      enum: ["USD", "EUR", "KSH", "GBP", "JPY", "AUD", "CAD"],
+      default: "USD",
+    },
   },
-  { timestamps: true } 
+  { timestamps: true }
 );
 
 // Check if the model already exists to avoid overwriting
